@@ -35,4 +35,8 @@ _Note: Ensure `hugo` is installed locally on your development machine_
     1. Web server runs locally at `http://localhost:1313/`
 1. Built site output is in `public` folder
 
+
+## Project Status
+
 ![CircleCI](https://img.shields.io/circleci/build/github/alloydwhitlock/whitlock.dev.source?logo=circleci)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/alloydwhitlock/whitlock.dev.source?logo=github)
