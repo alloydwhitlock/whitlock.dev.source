@@ -1,21 +1,31 @@
-version: 2.1
-orbs:
-  hugo: circleci/hugo@0.4.1
 jobs:
   deploy:
     docker:
       - image: cibuilds/base
     steps:
       - attach_workspace:
-          at: my-site
-      - run: ls -lah my-site
+          at: site
+      - run: |
+            git clone https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/whitlock.dev.git
+            cd whitlock.dev
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "cicd@whitlock.dev"
+            git config user.name "Deployment Bot"
+            cp -R ../site/public/* .
+            git add .
+            git commit --allow-empty -m "Trigger deployment via CircleCI"
+            git push -q https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/whitlock.dev.git master      
+
+orbs:
+  hugo: circleci/hugo@0.3.1
+version: 2.1
 workflows:
   main:
     jobs:
       - hugo/build:
-          version: '0.58.3'
-          source: docs/
           html-proofer: true
+          source: src/
+          version: '0.58.3'
       - deploy:
           filters:
             branches:
