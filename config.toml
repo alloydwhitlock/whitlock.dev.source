@@ -17,8 +17,7 @@ languageCode = "en-us"
     avatar = "avatar.jpg"
     favicon = "favicon.ico"
     description = """
-        Python, Go, Kotlin/Java.
-        Distributed systems and site reliability engineering.
+         Python, Go, Bash, Kotlin, Java. Engineering management. Drinker of coffee.
     """
     publicationYear = "2020"
     # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
@@ -49,10 +48,3 @@ languageCode = "en-us"
     pre = "<i class='fab fa-github fa-lg'></i>"
     url = "https://github.com/alloydwhitlock"
     weight = 30
-
-[[menu.main]]
-    identifier = "instagram"
-    # name = "Instagram"
-    pre = "<i class='fab fa-instagram fa-lg'></i>"
-    url = "https://instagram.com/alloydwhitlock/"
-    weight = 40
