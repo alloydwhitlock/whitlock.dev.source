@@ -14,6 +14,7 @@ jobs:
             cp -R ../site/public/* .
             git add .
             git commit --allow-empty -m "Trigger deployment via CircleCI"
+            git status
             git push -q https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/whitlock.dev.git master      
 
 orbs:
