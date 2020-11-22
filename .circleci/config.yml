@@ -17,7 +17,7 @@ jobs:
             git push -q https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/whitlock.dev.git master      
 
 orbs:
-  hugo: circleci/hugo@0.3.1
+  hugo: circleci/hugo@1.0.0
 version: 2.1
 workflows:
   main:
