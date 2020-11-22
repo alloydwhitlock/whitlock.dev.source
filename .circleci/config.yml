@@ -25,6 +25,7 @@ jobs:
             git config user.email "cicd@whitlock.dev"
             git config user.name "Deployment Bot"
             cp -R ../whitlock.dev.source/public/* .
+            sed -i -e 's/whitlock.dev/adamwhitlock.com/g' index.html
             git add .
             git commit --allow-empty -m "Trigger deployment via CircleCI"
             git push -q https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/alloydwhitlock.github.io.git      
