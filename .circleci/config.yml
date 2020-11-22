@@ -6,12 +6,11 @@ jobs:
       - attach_workspace:
           at: site
       - run: |
-            git clone https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/whitlock.dev.git
+            git clone https://${GITHUB_USERNAME}:${DEPLOY_GITHUB_TOKEN}@github.com/alloydwhitlock/whitlock.dev.source.git
             cd whitlock.dev
             git config credential.helper 'cache --timeout=120'
             git config user.email "cicd@whitlock.dev"
             git config user.name "Deployment Bot"
-            hugo -v -s . -d public
             cp -R ../site/public/* .
             git add .
             git commit --allow-empty -m "Trigger deployment via CircleCI"
