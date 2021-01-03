@@ -19,7 +19,7 @@ languageCode = "en-us"
     description = """
          Python, Go, Kotlin, Java. Engineering management. Operability. Good coffee.
     """
-    publicationYear = "2020"
+    publicationYear = "2021"
     # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
     # singlePageDateFormat = "January 2, 2006"
     # custom_css = ["/css/custom.css"]
